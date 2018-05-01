@@ -1,18 +1,25 @@
-import React from 'react';
 import React, { Component } from 'react';
-import albumData from './../data/albums';
+import albumData from './../data/album';
 
 class Library extends Component {
   constructor(props){
     super(props);
     this.state = { albums: albumData };
-
     }
-  }
-  render(){
+  render() {
     return(
       <section className="library">
-        Library go here
+        {
+          this.state.albums.map( (album, index) =>
+            <div key={index}>
+              {album.title}
+              <img src={album.albumCover} alt={album.title}/>
+              <div>{album.title}</div>
+              <div>{album.artist}</div>
+              <div>{album.songs.length} songs </div>
+            </div>
+          )
+        }
       </section>
     );
   }
