@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import albumData from './../data/album'
+import albumData from './../data/albums';
 
 class Album extends Component {
   constructor(props){
@@ -16,11 +16,11 @@ class Album extends Component {
     return (
       <section className="album">
         <section id="album-info">
-          <img id="album-cover-art"/>
+          <img id="album-cover-art" src={this.state.album.albumCover} />
           <div className="album-details">
-            <h1 id="album-title"></h1>
-            <h2 id="artist"></h2>
-            <div id="release-info"></div>
+            <h1 id="album-title">{this.state.album.title}</h1>
+            <h2 id="artist">{this.state.album.artist}</h2>
+            <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
       </section>
