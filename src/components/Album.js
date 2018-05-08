@@ -94,8 +94,10 @@ class Album extends Component {
     const mins = Math.floor(time/60)
     if(secs<10){
       return mins + ":" + "0" + secs;
-    }else{
+    }else if (secs>10){
       return mins + ":" + secs;
+    }else{
+      return "--:--";
     }
  
   }
