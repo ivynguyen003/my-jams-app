@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 class PlayerBar extends Component {
   render () {
     return (
-      <section className="play-bar">
+      <section className="player-bar">
         <section id="buttons">
           <button className="previous" onClick={this.props.handlePrevClick} >
-            <span className="ion-skip-backwards"></span>
+            <span className="ion-skip-backward"></span>
           </button>
           <button className="play-pause" onClick={this.props.handleSongClick}>
             <span className={this.props.isPlaying ? 'ion-pause': 'ion-play' }></span>
@@ -24,10 +24,11 @@ class PlayerBar extends Component {
             max="1"
             min="0"
             step="0.01"
+            onChange={this.props.handleTimeChange}
           />
           <div className="total-time">{this.props.duration}</div>
         </section>
-        <section id="volumn-control">
+        <section id="volume-control">
           <div className="icon ion-volume-low"></div>
           <input type="range" value="0" className="seek-bar"/>
           <div className="icon ion-volume-high"></div>
