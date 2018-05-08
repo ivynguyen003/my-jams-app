@@ -12,12 +12,36 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
+      currentTime: 0,
+      duration: album.songs[0],
       isPlaying: false
     };
 
-    this.audioElement = document.createElement('audio');
+    this.audioElement = document.createElement('audio');//
     this.audioElement.src = album.songs[0].audioSrc;
+
   }
+
+  componentDidMount() {//
+    this.eventListeners = {
+      timeupdate: e => {
+        this.setState({ currentTime: this.audioElement.currentTime});
+      },
+      durationchange: e => {
+        this.setState({duration: this.audioElement.duration });
+      }
+    };
+    this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
+    this.audioElement.addEventListener('durationchange', this.eventListeners.duration);
+  }
+
+  componentWillUnmount(){
+    this.audioElement.src = null;
+    this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
+    this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
+  }
+
+
   play() {
     this.audioElement.play();
     this.setState({ isPlaying: true });
@@ -38,7 +62,7 @@ class Album extends Component {
     if (this.state.isPlaying && isSameSong) {
       this.pause();
     } else {
-      if(!isSameSong){this.setSong(song)}
+      if (!isSameSong) { this.setSong(song) }
       this.play();
     }
   }
@@ -53,11 +77,19 @@ class Album extends Component {
 
   handleNextClick() {
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-    const newIndex = currentIndex +1;
+    const newIndex = currentIndex + 1;
     const newSong = this.state.album.songs[newIndex];
     this.setSong(newSong);
     this.play();
   }
+
+  handleTimeChange(e) {
+    const newTime = this.audioElement.duration * e.target.value;
+    this.audioElement.currentTime = newTime;
+    this.setState({currentTime: newTime});
+  } 
+    
+  
 
   render() {
     return (
@@ -92,16 +124,19 @@ class Album extends Component {
             )}
           </tbody>
         </table>
-        <PlayerBar 
-        isPlaying={this.state.isPlaying} 
-        currentSong={this.state.currentSongs}
-        handleSongClick={()=> this.handleSongClick(this.state.currentSong)}
-        handlePrevClick={()=> this.handlePrevClick()}
-        handleNextClick={()=> this.handleNextClick()}
+        <PlayerBar
+          isPlaying={this.state.isPlaying}
+          currentSong={this.state.currentSongs}
+          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+          handlePrevClick={() => this.handlePrevClick()}
+          handleNextClick={() => this.handleNextClick()}
+          handleTimeChange={(e) => this.handleTimeChange(e)}
+          currentTime={this.audioElement.currentTime}//
+          duration={this.audioElement.duration}//
         />
       </section>
     );
   }
 }
 
-  export default Album;
+export default Album;
