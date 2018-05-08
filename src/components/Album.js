@@ -88,7 +88,17 @@ class Album extends Component {
     this.audioElement.currentTime = newTime;
     this.setState({currentTime: newTime});
   } 
-    
+  
+  formatTime(time){
+    const secs = Math.floor(time % 60);
+    const mins = Math.floor(time/60)
+    if(secs<10){
+      return mins + ":" + "0" + secs;
+    }else{
+      return mins + ":" + secs;
+    }
+ 
+  }
   
 
   render() {
@@ -133,6 +143,7 @@ class Album extends Component {
           handleTimeChange={(e) => this.handleTimeChange(e)}
           currentTime={this.audioElement.currentTime}//
           duration={this.audioElement.duration}//
+          formatTime={this.formatTime}
         />
       </section>
     );
