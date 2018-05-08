@@ -12,11 +12,14 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
+      currentTime:0,
+      duration:album.songs[0],
       isPlaying: false
     };
 
-    this.audioElement = document.createElement('audio');
+    this.audioElement = document.createElement('audio');//
     this.audioElement.src = album.songs[0].audioSrc;
+
   }
   play() {
     this.audioElement.play();
@@ -98,6 +101,9 @@ class Album extends Component {
         handleSongClick={()=> this.handleSongClick(this.state.currentSong)}
         handlePrevClick={()=> this.handlePrevClick()}
         handleNextClick={()=> this.handleNextClick()}
+        currentTime={this.audioElement.currentTime}//
+        duration={this.audioElement.duration}//
+        duration
         />
       </section>
     );
