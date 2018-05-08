@@ -3,12 +3,12 @@ import React, {Component} from 'react';
 class PlayerBar extends Component {
   render () {
     return (
-      <section className="play-bar">
+      <section className="player-bar">
         <section id="buttons">
           <button className="previous" onClick={this.props.handlePrevClick} >
-            <span className="ion-skip-backwards"></span>
+            <span className="ion-skip-backward"></span>
           </button>
-          <button className="play-pause" onClick={this.props.handleSongClick}>
+          <button className="player-pause" onClick={this.props.handleSongClick}>
             <span className={this.props.isPlaying ? 'ion-pause': 'ion-play' }></span>
           </button>
           <button className="next" onClick={this.props.handleNextClick}>
@@ -20,7 +20,7 @@ class PlayerBar extends Component {
           <input type="range" value="0" className="seek-bar"/>
           <div className="total-time">-:-</div>
         </section>
-        <section id="volumn-control">
+        <section id="volume-control">
           <div className="icon ion-volume-low"></div>
           <input type="range" value="0" className="seek-bar"/>
           <div className="icon ion-volume-high"></div>
