@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import ThreeMain from './ThreeMain';
+import * as THREE from 'three';
 
 class Album extends Component {
   constructor(props) {
     super(props);
     const album = albumData.find(album => {
-      return album.slug === this.props.match.params.slug
+    return album.slug === this.props.match.params.slug
     });
 
     this.state = {
@@ -25,17 +27,17 @@ class Album extends Component {
   componentDidMount() {//
     this.eventListeners = {
       timeupdate: e => {
-        this.setState({ currentTime: this.audioElement.currentTime});
+        this.setState({ currentTime: this.audioElement.currentTime });
       },
       durationchange: e => {
-        this.setState({duration: this.audioElement.duration });
+        this.setState({ duration: this.audioElement.duration });
       }
     };
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.addEventListener('durationchange', this.eventListeners.duration);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.audioElement.src = null;
     this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
@@ -86,22 +88,21 @@ class Album extends Component {
   handleTimeChange(e) {
     const newTime = this.audioElement.duration * e.target.value;
     this.audioElement.currentTime = newTime;
-    this.setState({currentTime: newTime});
-  } 
-  
-  formatTime(time){
+    this.setState({ currentTime: newTime });
+  }
+
+  formatTime(time) {
     const secs = Math.floor(time % 60);
-    const mins = Math.floor(time/60)
-    if(secs<10){
+    const mins = Math.floor(time / 60)
+    if (secs < 10) {
       return mins + ":" + "0" + secs;
-    }else if (secs>10){
+    } else if (secs > 10) {
       return mins + ":" + secs;
-    }else{
+    } else {
       return "--:--";
     }
- 
+
   }
-  
 
   render() {
     return (
