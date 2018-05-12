@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
-import ThreeMain from './ThreeMain';
 import * as THREE from 'three';
 
 class Album extends Component {
