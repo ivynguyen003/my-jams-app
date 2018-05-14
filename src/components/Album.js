@@ -3,6 +3,7 @@ import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 import * as THREE from 'three';
 
+
 class Album extends Component {
   constructor(props) {
     super(props);
