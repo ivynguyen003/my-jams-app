@@ -1,26 +1,56 @@
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
-.landing header{
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,500');
+/* .landing header{
+  text-align:left;
+  grid-column: 2 / span 5;
+  grid-row: first-line/1;
   font-family: 'montserrat';
   height:100%;
   margin-top:0px;
   color:white;
-  background-image:
-    linear-gradient(
-      45deg,
-       #4B4A4A,#292929
-      
-    );
+  font-size:1.5rem;
+  letter-spacing: 0.1rem;
+} */
+
+.selling-points{
+  margin-top:20%;
+  text-align: center;
+  grid-column: 3 / span 1;
+  grid-row: second-line / 1;
+  justify-self: center;
 }
 
-section .landing {
-  height:100%;
+.point-description{
+  grid-column: 3 / span 1;
+  grid-row:  row3-start;
+}
+
+.landing {
+  display:grid;
+  grid-template-columns:10% 10% 60% 10% 10%;
+  grid-template-rows: 20% 50% 20% auto;
+  text-align: center;
+  height:50%;
   width:100%;
   background-image:
-    linear-gradient(
-      45deg,
-      
-       #4B4A4A,#292929 
+    radial-gradient(
+      ellipse closest-side,
+      #4B4A4A , #292929
     );
 }
 
+h1 {
+  color:#FF6CCC;
+  font-size:5rem;
+  font-family: 'Montserrat';
+  font-weight:700;
+  margin-bottom:0px;
+}
+
+p {
+  color:#707070;
+  font-size:1.25rem;
+  font-family: 'Montserrat';
+  padding-bottom:100%;
+  line-height: 2.6rem;
+}

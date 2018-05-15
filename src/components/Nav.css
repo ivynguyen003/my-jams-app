@@ -1,4 +1,70 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
-.header h3{
-  text-align: left;
+header{
+  text-align:left;
+  grid-column: 2 / span 3;
+  grid-row: first-line/1;
+  font-family: 'montserrat';
+  margin-top:0px;
+  color:white;
+  padding-top:20px;
 }
+
+.logo{
+  font-size:1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.dot {
+  padding-left: 1%;
+
+}
+
+circle{
+  fill: rgb(133, 4, 4);
+}
+
+.pulse{
+  fill: rgb(250, 28, 28);
+  fill-opacity: 10%;
+  transform-origin: 50% 50%;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    stroke-width: 3px;
+    stroke-opacity: 1;
+    transform: scale(0.3);
+  }
+  to {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.navBar{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 15%;
+}
+
+.menuItem{
+  justify-self: center;
+  align-self: end;
+}
+
+Nav.menuItem{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+Nav.menuItem a{
+  color: white;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+

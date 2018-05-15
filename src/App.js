@@ -12,10 +12,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <section className="main">
+        <section className="secLanding">
           <Route exact path="/" component={Landing} />
+        </section>
+        <section className="secLibrary">
           <Route path="/library" component={Library} />
+        </section>
+        <section className="secAlbum">
           <Route path="/album" component={Album} />
+        </section>
+        <section className="secAlbumSlug">
           <Route path="/albums/:slug" component={Album} />
         </section>
       </div>
