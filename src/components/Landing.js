@@ -1,9 +1,10 @@
 import React from 'react';
 import './Landing.css';
+import Nav from './Nav';
 
 const Landing = () => (
-  <body>
     <section className="landing">
+      <Nav />
       <section className="selling-points">
         <div className="point">
           <h2 className="point-title">Choose Your Music</h2>
@@ -19,7 +20,6 @@ const Landing = () => (
         </div>
       </section>
     </section>
-  </body>
 );
 
 export default Landing;

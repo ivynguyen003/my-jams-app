@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import albumData from './../data/albums';
 import './Library.css';
+import Nav from './Nav';
 
 class Library extends Component {
   constructor(props){
@@ -11,6 +12,7 @@ class Library extends Component {
   render() {
     return(
       <section className="library">
+        <Nav/>
         {
           this.state.albums.map( (album, index) =>
             <Link to={`/albums/${album.slug}`} key={index}>
