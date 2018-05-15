@@ -11,6 +11,7 @@ class App extends Component {
   render() {
     return (
         <div className="App">
+          <section className="main">
           <header>
             <h1 className="logo">My Jams App</h1>
             <nav>
@@ -18,12 +19,11 @@ class App extends Component {
               <Link to='/library'>Library</Link>
             </nav>
           </header>
-          <main>
             <Route exact path="/" component={Landing} />
             <Route path="/library" component={Library} />
-            <Route path="/album" component={Album} />
+            <Route path="/album" component={Album}/>
             <Route path="/albums/:slug" component={Album} />
-          </main>
+          </section>
         </div>
     );
   }
