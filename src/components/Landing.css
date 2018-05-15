@@ -8,6 +8,19 @@
   background-image:
     linear-gradient(
       45deg,
-      #E38C40,#FF6CCC 
+       #4B4A4A,#292929
+      
     );
 }
+
+section .landing {
+  height:100%;
+  width:100%;
+  background-image:
+    linear-gradient(
+      45deg,
+      
+       #4B4A4A,#292929 
+    );
+}
+
