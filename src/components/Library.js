@@ -12,7 +12,7 @@ class Library extends Component {
   render() {
     return(
       <section className="library">
-        <Nav/>
+        <Nav />
         {
           this.state.albums.map( (album, index) =>
             <Link to={`/albums/${album.slug}`} key={index}>

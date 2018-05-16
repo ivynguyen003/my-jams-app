@@ -28,7 +28,7 @@
 .landing {
   display:grid;
   grid-template-columns:10% 10% 60% 10% 10%;
-  grid-template-rows: 20% 50% 20% auto;
+  grid-template-rows: 20% 10% 20% 10% 20% 10% auto;
   text-align: center;
   height:50%;
   width:100%;
@@ -53,4 +53,20 @@ p {
   font-family: 'Montserrat';
   padding-bottom:100%;
   line-height: 2.6rem;
+}
+
+.go-to-album{
+  grid-column: 3 / span 1;
+  grid-row: 9;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1.5rem;
+  text-align: center;
+  background: #000
 }

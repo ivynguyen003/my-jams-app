@@ -11,6 +11,9 @@ const Landing = () => (
     <section className="point-description">
       <p>The world is full of music! why should you have to listen to music that someone else chose?</p>
     </section>
+    <section className="go-to-album">
+      <div class="circle">Go to Album</div>
+    </section>
   </section>
 );
 

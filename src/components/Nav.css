@@ -13,11 +13,6 @@ header{
   letter-spacing: 0.1rem;
 }
 
-.dot {
-  padding-left: 1%;
-
-}
-
 circle{
   fill: rgb(133, 4, 4);
 }
@@ -25,7 +20,7 @@ circle{
 .pulse{
   fill: rgb(250, 28, 28);
   fill-opacity: 10%;
-  transform-origin: 50% 50%;
+  transform-origin: 60% 60%;
   animation-duration: 2s;
   animation-name: pulse;
   animation-iteration-count: infinite;
@@ -68,3 +63,11 @@ Nav.menuItem a{
   padding-left: 1rem;
 }
 
+Nav.menuItem a:active {
+  color:#FF6CCC;
+}
+
+
+Nav.menuItem a:hover{
+  color:#FF6CCC;
+}

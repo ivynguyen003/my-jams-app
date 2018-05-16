@@ -9,9 +9,9 @@ class Nav extends Component {
         <section className="logo">
           <h3>Chili Beats
             <span>
-              <svg className="dot" height="20px" width="30px">
-                <circle cx="50%" cy="50%" r="10px"/>
-                <circle class="pulse" cx="50%" cy="50%" r="4px"/>
+              <svg className="dot" height="28px" width="30px">
+                <circle cx="60%" cy="60%" r="10px"/>
+                <circle class="pulse" cx="60%" cy="60%" r="4px"/>
               </svg>
             </span>
           </h3>

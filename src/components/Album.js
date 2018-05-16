@@ -24,6 +24,7 @@ class Album extends Component {
   }
 
   componentDidMount() {//
+    
     this.eventListeners = {
       timeupdate: e => {
         this.setState({ currentTime: this.audioElement.currentTime });
